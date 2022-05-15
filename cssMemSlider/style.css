@@ -11,7 +11,7 @@ body {
 .slider-container {
   display: flex;
   flex-direction: column;
-  width: 60vw;
+  width: 70vw;
   height: 70vh;
   border: 0.1rem solid #333;
   margin: 10vh auto;
@@ -20,6 +20,24 @@ body {
   border-radius: 1%;
   box-shadow: 0.4rem 0.4rem 0 0 #333;
 }
+
+@media (max-width: 1590px) {
+    .slider-container {
+      width: 80vw;
+    }
+  }
+
+@media (max-width: 1279px) {
+    .slider-container {
+      width: 90vw;
+    }
+  }
+
+@media (max-width: 767px) {
+    .slider-container {
+      width: 95vw;
+    }
+  }
 
 input {
   -webkit-appearance: none;
