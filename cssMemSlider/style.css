@@ -34,17 +34,32 @@ input {
   height: 60vh;
   display: flex;
   margin-bottom: 5vh;
+  background-color: #fff;
+  border-radius: 1%;
 }
 
 .mem-img {
-  margin-left: auto;
-  margin-right: auto;
+  height: 100%;
   width: 100%;
-  border-radius: 1%;
-  /* background-image: url("./img1.jpg");
   background-repeat: no-repeat;
-  background-position: center; */
-  background-color: #fff;
+  background-position: center;
+  background-size: contain;
+}
+
+.mem-img-1 {
+    background-image: url("./ido-1.jpg");
+}
+
+.mem-img-2 {
+    background-image: url("./bugs-2.jpg");
+}
+
+.mem-img-3 {
+    background-image: url("./jun-3.jpg");
+}
+
+.mem-img-4 {
+    background-image: url("./dogs-4.jpg");
 }
 
 .slider-footer {
@@ -113,7 +128,7 @@ label:hover .btn {
 .mem-img-3,
 .mem-img-4 {
     margin-left: -100%;
-    opacity: 0;
+    opacity: 1;
 }
 
 .mem-text-2,
