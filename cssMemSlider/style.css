@@ -83,7 +83,7 @@ input {
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
-  backdrop-filter: blur(0.7rem);
+  backdrop-filter: blur(0.7rem); /*не работает в мозиле*/
 }
 
 .mem-img-1 {
