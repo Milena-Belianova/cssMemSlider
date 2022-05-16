@@ -53,12 +53,37 @@ input {
   background-color: #fff;
 }
 
+.mem-img-background {
+  height: 100%;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.mem-img-background-1 {
+    background-image: url("./ido-1.jpg");
+}
+
+.mem-img-background-2 {
+    background-image: url("./bugs-2.jpg");
+}
+
+.mem-img-background-3 {
+    background-image: url("./jun-3.jpg");
+}
+
+.mem-img-background-4 {
+    background-image: url("./dogs-4.jpg");
+}
+
 .mem-img {
   height: 100%;
   width: 100%;
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
+  backdrop-filter: blur(0.3rem);
 }
 
 .mem-img-1 {
@@ -166,11 +191,10 @@ label:hover .btn {
   background-color: #fff;
 }
 
-.mem-img-2,
-.mem-img-3,
-.mem-img-4 {
+.mem-img-background-2,
+.mem-img-background-3,
+.mem-img-background-4 {
   margin-left: -100%;
-  opacity: 1;
 }
 
 .mem-text-2,
@@ -204,11 +228,21 @@ input:checked ~ .mem-img-container .mem-img {
   opacity: 0;
 }
 
+input:checked ~ .mem-img-container .mem-img-background {
+    animation: fadeOut ease 1s;
+    opacity: 0;
+  }
+
 input:checked ~ .slider-footer .mem-text {
   animation: fadeOut ease 1s;
   opacity: 0;
   pointer-events: none;
 }
+
+#radio-1:checked ~ .mem-img-container .mem-img-background-1 {
+    animation: fadeIn ease 1s;
+    opacity: 1;
+  }
 
 #radio-1:checked ~ .mem-img-container .mem-img-1 {
   animation: fadeIn ease 1s;
@@ -221,6 +255,11 @@ input:checked ~ .slider-footer .mem-text {
   pointer-events: all;
 }
 
+#radio-2:checked ~ .mem-img-container .mem-img-background-2 {
+    animation: fadeIn ease 1s;
+    opacity: 1;
+  }
+
 #radio-2:checked ~ .mem-img-container .mem-img-2 {
   animation: fadeIn ease 1s;
   opacity: 1;
@@ -232,6 +271,11 @@ input:checked ~ .slider-footer .mem-text {
   pointer-events: all;
 }
 
+#radio-3:checked ~ .mem-img-container .mem-img-background-3 {
+    animation: fadeIn ease 1s;
+    opacity: 1;
+  }
+
 #radio-3:checked ~ .mem-img-container .mem-img-3 {
   animation: fadeIn ease 1s;
   opacity: 1;
@@ -242,6 +286,11 @@ input:checked ~ .slider-footer .mem-text {
   opacity: 1;
   pointer-events: all;
 }
+
+#radio-4:checked ~ .mem-img-container .mem-img-background-4 {
+    animation: fadeIn ease 1s;
+    opacity: 1;
+  }
 
 #radio-4:checked ~ .mem-img-container .mem-img-4 {
   animation: fadeIn ease 1s;
