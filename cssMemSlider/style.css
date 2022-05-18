@@ -191,6 +191,12 @@ label:hover .btn {
   background-color: #fff;
 }
 
+label:active .btn {
+  background-color: transparent;
+  border: 0.15rem solid #fff;
+  box-shadow: 0 0 1rem #fff;
+}
+
 .mem-img-background-2,
 .mem-img-background-3,
 .mem-img-background-4 {
