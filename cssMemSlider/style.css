@@ -1,0 +1,310 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #2a9a9f;
+}
+
+.slider-container {
+  display: flex;
+  flex-direction: column;
+  width: 70vw;
+  height: 70vh;
+  border: 0.1rem solid #333;
+  margin: 10vh auto;
+  padding: 5vh 5vw 0;
+  background-color: #b65e5e;
+  border-radius: 1%;
+  box-shadow: 0.4rem 0.4rem 0 0 #333;
+}
+
+@media (max-width: 1590px) {
+    .slider-container {
+      width: 80vw;
+    }
+  }
+
+@media (max-width: 1279px) {
+    .slider-container {
+      width: 90vw;
+    }
+  }
+
+@media (max-width: 767px) {
+    .slider-container {
+      width: 95vw;
+    }
+  }
+
+input {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  visibility: hidden;
+}
+
+.mem-img-container {
+  height: 80%;
+  display: flex;
+  margin-bottom: 4%;
+  background-color: #fff;
+}
+
+.mem-img-background {
+  height: 100%;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.mem-img-background-1 {
+    background-image: url("./ido-1.jpg");
+}
+
+.mem-img-background-2 {
+    background-image: url("./bugs-2.jpg");
+}
+
+.mem-img-background-3 {
+    background-image: url("./jun-3.jpg");
+}
+
+.mem-img-background-4 {
+    background-image: url("./dogs-4.jpg");
+}
+
+.mem-img {
+  height: 100%;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  backdrop-filter: blur(0.7rem); /*не работает в мозиле*/
+}
+
+.mem-img-1 {
+  background-image: url("./ido-1.jpg");
+}
+
+.mem-img-2 {
+  background-image: url("./bugs-2.jpg");
+}
+
+.mem-img-3 {
+  background-image: url("./jun-3.jpg");
+}
+
+.mem-img-4 {
+  background-image: url("./dogs-4.jpg");
+}
+
+.slider-footer {
+  display: flex;
+  justify-content: space-between;
+}
+
+@media (max-width: 767px) {
+  .slider-footer {
+    flex-direction: column;
+  }
+}
+
+.mem-text-container {
+  width: 80%;
+  color: #fff;
+}
+
+@media (max-width: 767px) {
+  .mem-text-container {
+    order: 2;
+    margin-bottom: 4%;
+    width: 100%;
+  }
+}
+
+.mem-text {
+  padding: 0 0.5rem;
+  font-size: 2rem;
+  height: 7rem;
+}
+
+@media (max-width: 410px) {
+  .mem-text {
+    font-size: 1.5rem;
+  }
+}
+
+.btns-container {
+  display: flex;
+  height: 2.5rem;
+}
+
+@media (max-width: 767px) {
+  .btns-container {
+    align-self: center;
+    order: 1;
+    margin-bottom: 4%;
+  }
+}
+
+label {
+  width: 2rem;
+  height: 2.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.btn {
+  background-color: #f1b211;
+  border: none;
+  border-radius: 50%;
+  width: 1rem;
+  height: 1rem;
+  cursor: pointer;
+  outline: none;
+}
+
+#radio-1:checked ~ .slider-footer .label-1 > .btn,
+#radio-2:checked ~ .slider-footer .label-2 > .btn,
+#radio-3:checked ~ .slider-footer .label-3 > .btn,
+#radio-4:checked ~ .slider-footer .label-4 > .btn {
+  background-color: transparent;
+  border: 0.15rem solid #f1b211;
+}
+
+#radio-1:checked ~ .slider-footer .label-1:hover > .btn,
+#radio-2:checked ~ .slider-footer .label-2:hover > .btn,
+#radio-3:checked ~ .slider-footer .label-3:hover > .btn,
+#radio-4:checked ~ .slider-footer .label-4:hover > .btn {
+  background-color: transparent;
+  border: 0.15rem solid #fff;
+}
+
+label:hover .btn {
+  background-color: #fff;
+}
+
+label:active .btn {
+  background-color: transparent;
+  border: 0.15rem solid #fff;
+  box-shadow: 0 0 1rem #fff;
+}
+
+.mem-img-background-2,
+.mem-img-background-3,
+.mem-img-background-4 {
+  margin-left: -100%;
+}
+
+.mem-text-2,
+.mem-text-3,
+.mem-text-4 {
+  margin-top: -7rem;
+  opacity: 0;
+  pointer-events: none;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+input:checked ~ .mem-img-container .mem-img {
+  animation: fadeOut ease 1s;
+  opacity: 0;
+}
+
+input:checked ~ .mem-img-container .mem-img-background {
+    animation: fadeOut ease 1s;
+    opacity: 0;
+  }
+
+input:checked ~ .slider-footer .mem-text {
+  animation: fadeOut ease 1s;
+  opacity: 0;
+  pointer-events: none;
+}
+
+#radio-1:checked ~ .mem-img-container .mem-img-background-1 {
+    animation: fadeIn ease 1s;
+    opacity: 1;
+  }
+
+#radio-1:checked ~ .mem-img-container .mem-img-1 {
+  animation: fadeIn ease 1s;
+  opacity: 1;
+}
+
+#radio-1:checked ~ .slider-footer .mem-text-1 {
+  animation: fadeIn ease 1s;
+  opacity: 1;
+  pointer-events: all;
+}
+
+#radio-2:checked ~ .mem-img-container .mem-img-background-2 {
+    animation: fadeIn ease 1s;
+    opacity: 1;
+  }
+
+#radio-2:checked ~ .mem-img-container .mem-img-2 {
+  animation: fadeIn ease 1s;
+  opacity: 1;
+}
+
+#radio-2:checked ~ .slider-footer .mem-text-2 {
+  animation: fadeIn ease 1s;
+  opacity: 1;
+  pointer-events: all;
+}
+
+#radio-3:checked ~ .mem-img-container .mem-img-background-3 {
+    animation: fadeIn ease 1s;
+    opacity: 1;
+  }
+
+#radio-3:checked ~ .mem-img-container .mem-img-3 {
+  animation: fadeIn ease 1s;
+  opacity: 1;
+}
+
+#radio-3:checked ~ .slider-footer .mem-text-3 {
+  animation: fadeIn ease 1s;
+  opacity: 1;
+  pointer-events: all;
+}
+
+#radio-4:checked ~ .mem-img-container .mem-img-background-4 {
+    animation: fadeIn ease 1s;
+    opacity: 1;
+  }
+
+#radio-4:checked ~ .mem-img-container .mem-img-4 {
+  animation: fadeIn ease 1s;
+  opacity: 1;
+}
+
+#radio-4:checked ~ .slider-footer .mem-text-4 {
+  animation: fadeIn ease 1s;
+  opacity: 1;
+  pointer-events: all;
+}
